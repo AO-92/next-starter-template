@@ -1,88 +1,73 @@
-import Image from "next/image";
-
+// app/page.tsx
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const card = {
+    background: '#11131a',
+    border: '1px solid #1f2330',
+    borderRadius: 12,
+    padding: '20px',
+  } as const;
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
+  const link = { textDecoration: 'none', color: '#7cc7ff' } as const;
+
+  return (
+    <main style={{ maxWidth: 1100, margin: '0 auto', padding: '56px 20px' }}>
+      {/* HERO */}
+      <section style={{ textAlign: 'center', marginBottom: 48 }}>
+        <div style={{ fontSize: 14, letterSpacing: 2, color: '#9aa4b2' }}>A0-BUILDS HOLDINGS LLC</div>
+        <h1 style={{ fontSize: 44, lineHeight: 1.1, margin: '12px 0 8px' }}>
+          Building Secure Systems.<br />Creating Opportunity.
+        </h1>
+        <p style={{ color: '#b9c2cf', fontSize: 18, maxWidth: 720, margin: '0 auto' }}>
+          We design, build, and secure infrastructure and applications—incubating products and services that scale.
+        </p>
+        <div style={{ marginTop: 24, display: 'flex', gap: 12, justifyContent: 'center' }}>
+          <a href="mailto:joshua@a0builds.com" style={{ ...link, padding: '10px 16px', border: '1px solid #1f2330', borderRadius: 8 }}>Contact</a>
+          <a href="#portfolio" style={{ ...link, padding: '10px 16px', border: '1px solid #1f2330', borderRadius: 8 }}>Portfolio</a>
+        </div>
+      </section>
+
+      {/* VALUE PROPS */}
+      <section style={{ display: 'grid', gap: 16, gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', marginBottom: 32 }}>
+        <div style={card}><h3>Security & SOC</h3><p style={{ color: '#b9c2cf' }}>Managed detection, monitoring, and ethical testing for SMBs and teams.</p></div>
+        <div style={card}><h3>Marketplace</h3><p style={{ color: '#b9c2cf' }}>KNCT-Hub connects group buyers to unlock wholesale pricing.</p></div>
+        <div style={card}><h3>R&D / Labs</h3><p style={{ color: '#b9c2cf' }}>Encryption tooling and infrastructure experiments that become products.</p></div>
+        <div style={card}><h3>Impact</h3><p style={{ color: '#b9c2cf' }}>Giving back through education, access, and community projects.</p></div>
+      </section>
+
+      {/* PORTFOLIO */}
+      <section id="portfolio" style={{ marginTop: 32 }}>
+        <h2 style={{ marginBottom: 16 }}>Portfolio</h2>
+        <div style={{ display: 'grid', gap: 16, gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))' }}>
+          <a href="https://knct-hub.shop" style={{ ...card, ...link }}>
+            <h3>KNCT-Hub</h3>
+            <p style={{ color: '#b9c2cf' }}>Marketplace MVP for coordinated group buying.</p>
+          </a>
+          <a href="mailto:security@a0builds.com" style={{ ...card, ...link }}>
+            <h3>A0-Security</h3>
+            <p style={{ color: '#b9c2cf' }}>SOC services & penetration testing.</p>
+          </a>
+          <a href="#" style={{ ...card, ...link }}>
+            <h3>A0-Labs</h3>
+            <p style={{ color: '#b9c2cf' }}>Encryption tool & infra experiments (coming soon).</p>
+          </a>
+          <a href="#" style={{ ...card, ...link }}>
+            <h3>A0-Impact</h3>
+            <p style={{ color: '#b9c2cf' }}>Philanthropy & community programs (coming soon).</p>
           </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </section>
+
+      {/* CONTACT */}
+      <section style={{ marginTop: 48 }}>
+        <h2>Contact</h2>
+        <p style={{ color: '#b9c2cf' }}>
+          Email <a href="mailto:joshua@a0builds.com" style={link}>joshua@a0builds.com</a> or <a href="mailto:security@a0builds.com" style={link}>security@a0builds.com</a>
+        </p>
+      </section>
+
+      <footer style={{ marginTop: 48, paddingTop: 24, borderTop: '1px solid #1f2330', color: '#9aa4b2', fontSize: 14 }}>
+        © {new Date().getFullYear()} A0-Builds Holdings LLC · Salt Lake City, Utah
       </footer>
-    </div>
+    </main>
   );
 }
