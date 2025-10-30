@@ -38,7 +38,7 @@ export default function Home() {
       <section id="portfolio" style={{ marginTop: 32 }}>
         <h2 style={{ marginBottom: 16 }}>Portfolio</h2>
         <div style={{ display: 'grid', gap: 16, gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))' }}>
-          <a href="https://knct-hub.shop" style={{ ...card, ...link }}>
+          <a href="https://knct-hub.com" style={{ ...card, ...link }}>
             <h3>KNCT-Hub</h3>
             <p style={{ color: '#b9c2cf' }}>Marketplace MVP for coordinated group buying.</p>
           </a>
