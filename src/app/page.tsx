@@ -13,7 +13,7 @@ export default function Home() {
     <main style={{ maxWidth: 1100, margin: '0 auto', padding: '56px 20px' }}>
       {/* HERO */}
       <section style={{ textAlign: 'center', marginBottom: 48 }}>
-        <div style={{ fontSize: 14, letterSpacing: 2, color: '#9aa4b2' }}>A0-BUILDS HOLDINGS LLC</div>
+        <div style={{ fontSize: 14, letterSpacing: 2, color: '#9aa4b2' }}>A0-BUILDS LLC</div>
         <h1 style={{ fontSize: 44, lineHeight: 1.1, margin: '12px 0 8px' }}>
           Building Secure Systems.<br />Creating Opportunity.
         </h1>
